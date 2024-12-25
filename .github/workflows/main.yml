@@ -13,22 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Check out the code from the repository
       - name: Check out code
         uses: actions/checkout@v3
 
-      # Set up Java 17 or higher
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          java-version: '23' # Specify the Java version defined in your pom.xml
+          java-version: '17'
           distribution: 'temurin'
           cache: maven
 
-      # Display the Java version
       - name: Verify Java version
         run: java -version
 
-      # Install dependencies and run tests
       - name: Build and run tests
         run: mvn clean test

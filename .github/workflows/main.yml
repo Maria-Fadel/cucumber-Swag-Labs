@@ -21,6 +21,17 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          cache: maven
+
+      - name: Verify Java version
+        run: java -version
 
       - name: Build and run tests
         run: mvn clean test
+
+      - name: Upload Surefire reports
+        if: failure() # Nur bei fehlschlagenden Builds
+        uses: actions/upload-artifact@v3
+        with:
+         name: surefire-reports
+         path: target/surefire-reports/

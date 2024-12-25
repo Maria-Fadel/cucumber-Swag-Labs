@@ -14,33 +14,28 @@ import java.io.IOException;
 
 public class saucedemoSteps {
     WebDriver driver;
+    LoginPage loginPage;
+    ProductPage productPage;
 
-
+    public saucedemoSteps() {
+        driver = DriverFactory.getDriver();
+        loginPage = new LoginPage(driver);
+        productPage = new ProductPage(driver);
+    }
     @Given("user ist in der Login-page")
     public void UserIstInDerLoginPage() throws IOException {
-        driver = DriverFactory.getDriver();
-        new LoginPage(driver).load(EnvUtils.getInstance().getURL());
+       loginPage.load(EnvUtils.getInstance().getURL());
     }
-
-
     @When("user gibt email und password")
     public void usergibtEmailUndPassword() throws IOException {
-        LoginPage loginPage = new LoginPage(driver);
         loginPage.login(EnvUtils.getInstance().getUser(),EnvUtils.getInstance().getPassword());
     }
-
     @Then("user wird in inventory-Page weitergeleitet")
     public void userWirdInInventoryPageWeitergeleitet(){
-        ProductPage productPage = new ProductPage(driver);
         Assert.assertTrue(productPage.checkCorrectPage());
-
-
     }
     @When("Products-Title ist sichtbar")
     public void ProductsTitleIstSichtbar(){
-
-        ProductPage productPage = new ProductPage(driver);
         Assert.assertTrue(productPage.titleIsDisplayed());
     }
-
 }

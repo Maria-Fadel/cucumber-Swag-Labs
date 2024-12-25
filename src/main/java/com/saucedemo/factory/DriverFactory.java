@@ -23,7 +23,7 @@ public class DriverFactory {
                 options.addArguments("--no-sandbox"); // Wichtige Option für CI-Umgebungen
                 driver = new ChromeDriver(options); // Starte ChromeDriver mit den Optionen
                 break;
-//
+
             }
             case "FIREFOX": {
                 driver = new FirefoxDriver();

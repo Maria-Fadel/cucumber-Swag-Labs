@@ -15,22 +15,25 @@ public class DriverFactory {
         WebDriver driver;
         String browser = System.getProperty("browser", "CHROME");
         switch (browser) {
-            case "CHROME" ->{
+            case "CHROME": {
                 //driver = new ChromeDriver();
                 // ChromeOptions für den Headless-Modus in CI-Umgebung konfigurieren
                 ChromeOptions options = new ChromeOptions();
                 options.addArguments("--headless"); // Headless-Modus für CI-Umgebung
                 options.addArguments("--no-sandbox"); // Wichtige Option für CI-Umgebungen
                 driver = new ChromeDriver(options); // Starte ChromeDriver mit den Optionen
+                break;
 //
             }
-            case "FIREFOX" ->{
+            case "FIREFOX": {
                 driver = new FirefoxDriver();
+                break;
             }
-            case "SAFARI" ->{
+            case "SAFARI": {
                 driver = new SafariDriver();
+                break;
             }
-            default -> {
+            default: {
                 throw new RuntimeException("Browser ist nicht verfügbar");
             }
         }

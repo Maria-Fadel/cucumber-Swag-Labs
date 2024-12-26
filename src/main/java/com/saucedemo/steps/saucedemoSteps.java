@@ -17,6 +17,7 @@ public class saucedemoSteps {
     LoginPage loginPage;
     ProductPage productPage;
 
+
     public saucedemoSteps() {
         driver = DriverFactory.getDriver();
         loginPage = new LoginPage(driver);
@@ -27,7 +28,7 @@ public class saucedemoSteps {
        loginPage.load(EnvUtils.getInstance().getURL());
     }
     @When("user gibt email und password")
-    public void usergibtEmailUndPassword() throws IOException {
+    public void usergibtEmailUndPassword() throws Exception {
         loginPage.login(EnvUtils.getInstance().getUser(),EnvUtils.getInstance().getPassword());
     }
     @Then("user wird in inventory-Page weitergeleitet")

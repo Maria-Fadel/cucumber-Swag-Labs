@@ -16,13 +16,13 @@ public class overviewSteps {
         overviewPage = new OverviewPage(driver);
     }
 
-    @When("Check {string} in Overview Page vorhanden ist")
+    @When("overviewPage: Check {string} in Overview Page vorhanden ist")
     public void check_in_overview_page_vorhanden_ist(String produktName) {
         Assert.assertTrue(overviewPage.istProkuktVorhanden(produktName));
 
 
     }
-    @When("Finish klicken")
+    @When("overviewPage: Finish klicken")
     public void finish_klicken() {
         overviewPage.finishKlicken();
     }

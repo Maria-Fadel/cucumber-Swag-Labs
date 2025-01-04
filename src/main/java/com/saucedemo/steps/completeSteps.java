@@ -4,6 +4,7 @@ import com.saucedemo.factory.DriverFactory;
 import com.saucedemo.pages.CartPage;
 import com.saucedemo.pages.CompletePage;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -18,13 +19,17 @@ public class completeSteps {
         completePage = new CompletePage(driver);
     }
 
-    @And("Check Thank you Message ist vorhanden")
+    @And("completePage: Check Thank you Message ist vorhanden")
     public void checkThankYouMessageIstVorhanden(){
         Assert.assertTrue(completePage.istThankYouMessageVorhanden());
     }
 
-    @And("Back Home klicken")
+    @And("completePage: Back Home klicken")
     public void backHomeKlicken(){
         completePage.backHomeKlicken();
+    }
+    @When("completePage: logout anklicken")
+    public void logoutClick(){
+        completePage.logoutClick();
     }
 }

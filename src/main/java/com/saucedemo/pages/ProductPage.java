@@ -33,6 +33,9 @@ public class ProductPage extends BasePage {
     @FindBy(css = ".btn_inventory")
     private List<WebElement> addToCartButtons;
 
+    @FindBy(css = ".bm-item.menu-item")
+    private List<WebElement> menuItems;
+
       public int getItemCount() {
         return inventoryItems.size();
     }
@@ -61,6 +64,29 @@ public class ProductPage extends BasePage {
         // Wenn kein Produkt gefunden wurde, werfen wir eine Exception
         throw new NoSuchElementException("Kein Produkt mit dem Namen '" + productName + "' gefunden.");
     }
+    public boolean checkProductsUngleichNull(){
+          if (itemNames.size()== 0){
+              return true;
+          }else
+              return false;
+    }
+
+    public boolean checkProductsIstgleichAnzahl(int anzahl){
+        if (itemNames.size()== anzahl){
+            return true;
+        }else
+            return false;
+    }
+
+    public boolean checkBurgerMenuEnthaeltItemsAnzahl(int anzahl){
+        if (menuItems.size()== anzahl){
+            return true;
+        }else
+            return false;
+    }
+
+
+
 
     public boolean titleIsDisplayed(){
 

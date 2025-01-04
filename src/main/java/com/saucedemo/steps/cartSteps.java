@@ -18,12 +18,12 @@ public class cartSteps {
     }
 
 
-    @Given("Check {string} ist in Warenkorb vorhanden")
+    @Given("cartPage: Check {string} ist in Warenkorb vorhanden")
     public void checkProductIstInWarenkorbVorhanden(String productName) throws InterruptedException {
         Assert.assertTrue(cartPage.isItemInCart(productName));
     }
 
-    @And("Checkout klicken")
+    @And("cartPage: Checkout klicken")
     public void checkoutKlicken(){
         cartPage.weiterZuCheckout();
     }

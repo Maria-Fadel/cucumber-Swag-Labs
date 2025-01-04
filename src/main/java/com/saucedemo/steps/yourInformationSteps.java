@@ -15,19 +15,19 @@ public class yourInformationSteps {
         yourInformaitionPage = new YourInformaitionPage(driver);
     }
 
-    @When("{string} first name eingeben")
+    @When("yourInformaitionPage: {string} first name eingeben")
     public void first_name_eingeben(String firstName) {
         yourInformaitionPage.enterFirstName(firstName);
     }
-    @When("{string} last name eingeben")
+    @When("yourInformaitionPage: {string} last name eingeben")
     public void last_name_eingeben(String lastName) {
         yourInformaitionPage.enterLastName(lastName);
     }
-    @When("{string} ZIP eingeben")
+    @When("yourInformaitionPage: {string} ZIP eingeben")
     public void zip_eingeben(String ZIP) {
        yourInformaitionPage.enterPostalCode(ZIP);
     }
-    @When("Continue klicken")
+    @When("yourInformaitionPage: Continue klicken")
     public void continueKlicken() {
        yourInformaitionPage.clickContinue();
     }

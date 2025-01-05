@@ -1,6 +1,7 @@
 package com.saucedemo.pages;
 
 import com.saucedemo.base.BasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.WebElement;
@@ -84,10 +85,6 @@ public class ProductPage extends BasePage {
         }else
             return false;
     }
-
-
-
-
     public boolean titleIsDisplayed(){
 
         String actualText = title.getText();
@@ -104,5 +101,29 @@ public class ProductPage extends BasePage {
 
     public void warenkorbKlicken(){
         warenkorb.click();
+    }
+
+    public boolean istRemoveButtonSichtbar(String product) {
+
+        String formattedId = "remove-" + product.toLowerCase().replace(" ", "-");
+        // Sucht den Button anhand der ID
+        WebElement removeButton = driver.findElement(By.id(formattedId));
+        // Überprüft, ob das Element sichtbar ist
+        return removeButton.isDisplayed();
+    }
+    public boolean istAddToCartButtonSichtbar(String product) {
+
+        String formattedId = "add-to-cart-" + product.toLowerCase().replace(" ", "-");
+        // Sucht den Button anhand der ID
+        WebElement addToCartButton = driver.findElement(By.id(formattedId));
+        // Überprüft, ob das Element sichtbar ist
+        return addToCartButton.isDisplayed();
+    }
+    public void clickRemoveButton(String product) {
+        String formattedId = "remove-" + product.toLowerCase().replace(" ", "-");
+        WebElement removeButton = driver.findElement(By.id(formattedId));
+        removeButton.click();
+
+
     }
 }

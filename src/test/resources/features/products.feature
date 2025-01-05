@@ -1,6 +1,7 @@
-Feature: User login standard_user
+Feature: product
 
-  Scenario Outline: user kann sich  einloggen
+  Scenario Outline: Regressionstest für product-Page
+
     Given loginPage: user ist in der Login-page
     When loginPage: user gibt email und password
     Then loginPage: user wird in inventory-Page weitergeleitet
@@ -8,7 +9,9 @@ Feature: User login standard_user
     And productPage: check die products ist ungleich null
     And productPage: check die products ist gleich <productAnzahl>
     And productPage: check burger menu enthält <itemsAnzahl>
+    When productPage: "<Produkt>" in den Warenkorb legen
+    And  productPage: check Remove-Button für folgende "<Produkt>" ist sichtbar
 
     Examples:
-      | productAnzahl |itemsAnzahl |lastName   |ZIP    |
-      | 6            |4             |Maximilian | 12345 |
+      | productAnzahl |itemsAnzahl  | Produkt            |
+      | 6            |4             | Sauce Labs Backpack|

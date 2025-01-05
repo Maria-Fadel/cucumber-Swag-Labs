@@ -1,6 +1,6 @@
-Feature: Validierung der Login-Funktion mit korrekten und falschen Anmeldedaten.
+Feature: Validierung der Login.
 
-  Scenario Outline: Login-Funktion mit korrekten Anmeldedaten
+  Scenario Outline: Regressionstest für Login korrekten und falschen Anmeldedaten
     Given loginPage: user ist in der Login-page
     When loginPage: user gibt korrekten "<email>" und "<password>"
     Then loginPage: user wird in inventory-Page weitergeleitet

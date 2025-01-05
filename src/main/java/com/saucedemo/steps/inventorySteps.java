@@ -42,10 +42,29 @@ public class inventorySteps {
         Assert.assertTrue(productPage.checkProductsIstgleichAnzahl(anzahl));
 
     }
-
     @And("productPage: Warenkorb klicken")
-    public void warenkorbKlicken(){
+    public void productPageWarenkorbKlicken(){
         productPage.warenkorbKlicken();
     }
+
+    @And("productPage: check Remove-Button für folgende {string} ist sichtbar")
+    public void productPageRemoveButtonIstSichtbar(String product ){
+      productPage.istRemoveButtonSichtbar(product);
+
+    }
+
+    @And("productPage: check add to cart-Button für folgende {string} ist sichtbar")
+    public void productPageAddToCartButtonIstSichtbar(String product ){
+        productPage.istAddToCartButtonSichtbar(product);
+
+    }
+
+    @And("productPage: {string} Remove-Button anklicken")
+    public void productPageRemoveButtonProductRemoveButtonAnklicken(String product ) throws InterruptedException {
+        productPage.clickRemoveButton(product);
+
+    }
+
+
 
 }

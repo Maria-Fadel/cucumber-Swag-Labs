@@ -1,6 +1,6 @@
-Feature: User login standard_user
+Feature: kauf eines Produkts
 
-  Scenario Outline: user kann sich  einloggen
+  Scenario Outline: Regressionstest für das gesammte System
     Given loginPage: user ist in der Login-page
     When loginPage: user gibt email und password
     Then loginPage: user wird in inventory-Page weitergeleitet

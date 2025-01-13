@@ -7,15 +7,16 @@ Verwendung von Cucumber für BDD (Behavior Driven Development).
 Testszenarien basieren auf Gherkin-Syntax.
 Integration mit Selenium WebDriver für Browser-Interaktionen.
 Build-Management und Abhängigkeitsverwaltung mit Maven.
+
 🛠️ Voraussetzungen
 Um dieses Projekt lokal auszuführen, benötigst du:
-
 Java 11 oder höher
 Maven 3.6 oder höher
 Eine IDE wie IntelliJ IDEA oder Eclipse
 Ein Webbrowser (z. B. Chrome)
 ChromeDriver (für Chrome-Tests)
 
+📂 Projektstruktur
 cucumber-Swag-Labs/  
 ├── src/main/java          # Hauptquellcode  
 ├── src/test/java          # Testfälle und Step-Definitionen  
@@ -24,15 +25,14 @@ cucumber-Swag-Labs/
 └── README.md              # Projektbeschreibung  
 
 Installation und Ausführung
-Repository klonen:
+1. Repository klonen:
 
 bash
-Code kopieren
-git clone https://github.com/Maria-Fadel/cucumber-Swag-Labs.git  
+git clone https://github.com/Maria-Fadel/cucumber-Swag-Labs.git
 cd cucumber-Swag-Labs  
 
-Abhängigkeiten installieren:
+2. Abhängigkeiten installieren:
 mvn clean install  
 
-Tests ausführen:
-mvn test  
+3. Tests ausführen:
+mvn clean test  
